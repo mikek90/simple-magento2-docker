@@ -10,3 +10,7 @@ services:
       - "8001:80"
     links:
       - db
+  web:
+    build: .
+    ports:
+      - 8000:80
