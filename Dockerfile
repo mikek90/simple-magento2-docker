@@ -12,11 +12,9 @@ RUN docker-php-ext-install pdo_mysql gd mcrypt mbstring zip intl xsl soap bcmath
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
-RUN composer create-project --repository=https://repo.magento.com/ magento/project-community-edition
+RUN composer create-project --repository=https://repo.magento.com/ magento/project-community-edition /var/www/html
 
-RUN cd project-community-edition \
-    && find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + \
+RUN find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + \
     && find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + \
     && chown -R :www-data . \
-    && chmod u+x bin/magento \
-    && cd ..
+    && chmod u+x bin/magento
