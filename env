@@ -1,5 +1,5 @@
 MYSQL_HOST=db
 MYSQL_ROOT_PASSWORD=rootpass
-MYSQL_USER=magento2
-MYSQL_PASSWORD=magento2
-MYSQL_DATABASE=magento2
+MYSQL_USER=magentouser
+MYSQL_PASSWORD=magentopass
+MYSQL_DATABASE=magento
