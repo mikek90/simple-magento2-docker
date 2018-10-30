@@ -12,7 +12,7 @@ RUN chown -R $USER_NAME:$USER_GROUP $COMPOSER_FOLDER \
     && chmod -R 775 $COMPOSER_FOLDER
 
 RUN apt-get update \
-    && apt-get install -y zip unzip \
+    && apt-get install -y zip unzip cron \
     && apt-get install -y libmcrypt-dev libmcrypt4 libcurl3-dev libfreetype6 libfreetype6-dev libicu-dev libxslt1-dev libjpeg62-turbo-dev
 
 RUN docker-php-ext-install pdo_mysql \
